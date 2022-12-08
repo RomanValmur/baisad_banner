@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <happy-hours-banner :class="{ animated: isAnimated }"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import HappyHoursBanner from './components/HappyHoursBanner.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    HappyHoursBanner,
+  },
+  data() {
+    return {
+      isAnimated: true,
+    };
+  },
+  methods: {
+    loopAnimation() {
+      setInterval(() => {
+        this.isAnimated = false;
+        setTimeout(() => {
+          this.isAnimated = true;
+        }, 50);
+      }, 11000);
+    },
+  },
+  mounted() {
+    this.loopAnimation();
   },
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
