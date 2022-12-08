@@ -45,10 +45,12 @@ export default {
 
 <style lang="scss">
 .happy-hours-banner {
-  display: flex;
-  justify-content: center;
+  position: relative;
+
+  display: block;
 
   width: 100%;
+  min-width: 980px;
   height: 250px;
 
   background: #004ba5;
@@ -59,50 +61,60 @@ export default {
   cursor: pointer;
 
   &__inner {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    right: -720px;
+    left: -720px;
 
     width: 1440px;
-    height: 100%;
+    height: 250px;
+
+    margin: 0 auto;
 
     background-image: linear-gradient(270deg, #004ba5, #00b6f0 31%, #004ba5);
   }
 
   &__content {
     position: relative;
-    width: 790px;
+
+    width: auto;
     height: 100%;
+
+    margin: 0 auto;
   }
 
   &__logo {
     position: absolute;
     top: 20px;
+    left: 325px
   }
 
   &__title {
     position: absolute;
     top: 65px;
+    left: 325px
   }
 
   &__caption {
     position: absolute;
     top: 118px;
+    left: 325px
   }
 
   &__button {
     position: absolute;
     top: 170px;
+    left: 325px
   }
 
   &__rect {
     &_small {
       top: 8px;
-      left: 486px;
+      left: 848px;
     }
 
     &_medium {
       top: -28px;
-      left: 466px;
+      left: 811px;
 
       width: 317px;
       height: 317px;
@@ -111,7 +123,7 @@ export default {
 
     &_large {
       top: -65px;
-      left: 450px;
+      left: 775px;
 
       width: 390px;
       height: 390px;
@@ -122,7 +134,7 @@ export default {
   &__image-gift {
     &_small {
       top: 0;
-      left: 481px;
+      left: 806px;
 
       width: 173px;
       height: 178px;
@@ -132,7 +144,7 @@ export default {
 
     &_big {
       top: 14px;
-      left: 580px;
+      left: 905px;
 
       width: 202px;
       height: 225px;
@@ -143,13 +155,14 @@ export default {
 
   &__rating {
     position: absolute;
-    left: 766px;
+    left: 1091px;
     top: 20px;
   }
 
   &__disclaimer {
     position: absolute;
     top: 89px;
+    left: 325px;
   }
 }
 </style>
